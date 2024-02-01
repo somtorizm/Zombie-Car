@@ -1,19 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManagerScript : MonoBehaviour
 {
     [SerializeField]
     public float carSpeed = 50f;
-
-    [SerializeField]
-    public float oppositeLaneCarSpeed = 40f;
-
-    [SerializeField]
-    public float oppositeRightLaneCarSpeed = 40f;
-
-    private int killedZombie = 0;
 
     [SerializeField]
     public GameObject[] gameObjects;
@@ -24,12 +15,42 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField]
     public GameObject spawner;
 
+    [SerializeField]
+    public float totalDistanceInMiles = 10f;
+    private float remainingDistance;
+
+    [SerializeField]
+    public float countdownDurationInSeconds = 60f; 
+    private float speed;
+
+    [SerializeField]
+    public TextMeshProUGUI distanceText;
+
 
     void Start()
     {
-        
+        remainingDistance = totalDistanceInMiles;
+        speed = totalDistanceInMiles / countdownDurationInSeconds;
     }
-  
+
+    private void Update()
+    {
+        if (remainingDistance > 0f)
+        {
+            remainingDistance -= speed * Time.deltaTime; // Update remaining distance
+            UpdateUI();
+        }
+        else
+        {
+            remainingDistance = 0f; // Ensure the distance doesn't go below zero
+        }
+    }
+
+    private void UpdateUI()
+    {
+        distanceText.text = "Distance: " + remainingDistance.ToString("F2") + " miles";
+    }
+
 
     public void updateZombieKilled(float number)
     {

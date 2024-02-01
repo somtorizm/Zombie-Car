@@ -13,13 +13,8 @@ public class MoveCube : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
-        if(isOppositeLaneCar)
-        {
-            speed = gameManager.oppositeLaneCarSpeed;
-        } else
-        {
-            speed = gameManager.carSpeed;
-        }
+        speed = gameManager.carSpeed;
+
     }
 
     // Update is called once per frame
