@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class GameManagerScript : MonoBehaviour
 {
@@ -21,6 +22,9 @@ public class GameManagerScript : MonoBehaviour
 
     [SerializeField]
     private GameObject zombieSpawner;
+
+    private float timeScaleTarget = 0f;
+    private float timeScaleSmoothness = 80f;
 
     void Start()
     {
@@ -61,7 +65,7 @@ public class GameManagerScript : MonoBehaviour
 
         if (isPaused)
         {
-            PauseGame();
+            StartCoroutine(SmoothPause());
         }
         else
         {
@@ -69,16 +73,33 @@ public class GameManagerScript : MonoBehaviour
         }
     }
 
-    void PauseGame()
-    {
-        Time.timeScale = 0f; // Set time scale to 0 to pause the game
-        // You can also add additional pause-related functionality here (e.g., showing a pause menu)
-    }
+    IEnumerator SmoothPause() {
+        float elapsedTime = 0f;
+
+        while (Time.timeScale > timeScaleTarget)
+        {
+            // Use unscaledDeltaTime to avoid affecting the coroutine timing
+            elapsedTime += Time.unscaledDeltaTime;
+
+            // Calculate the interpolation factor based on the elapsed time and desired smoothness
+            float t = Mathf.Clamp01(elapsedTime / timeScaleSmoothness);
+
+            // Smoothly interpolate towards the target time scale
+            Time.timeScale = Mathf.Lerp(Time.timeScale, timeScaleTarget, t);
+
+            yield return null;
+        }
+
+        Time.timeScale = timeScaleTarget;
+
+    // Additional pause-related functionality here (e.g., showing a pause menu)
+}
+
+
 
     void ResumeGame()
     {
-        Time.timeScale = 1f; // Set time scale back to 1 to resume the game
-        // You can also add additional resume-related functionality here
+        Time.timeScale = 1f; // Set time scale back to 1 to resume the gam
     }
 
     void DisableZombieSpawn()
