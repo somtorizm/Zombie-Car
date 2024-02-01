@@ -11,7 +11,7 @@ public class MoveCube : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
-        speed = gameManager.carSpeed;
+        speed = gameManager.carSpeed / 3f;
 
     }
 
@@ -22,7 +22,6 @@ public class MoveCube : MonoBehaviour
         if(speed >=  0)
         {
           transform.position = transform.position + (Vector3.back * speed) * Time.deltaTime;
-
         }
         //destroyObject();
     }

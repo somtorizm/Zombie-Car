@@ -31,6 +31,8 @@ Library: /Users/victorsomto/Car/Zombie-Car/Temp/BurstOutput/tempburstlibs/armeab
 --assembly-defines=Unity.VisualScripting.State;
 --assembly-defines=Cinemachine;
 --assembly-defines=Unity.Notifications.Android;
+--assembly-defines=DelaunayER;
+--assembly-defines=EasyRoads3Dv3;
 --assembly-defines=Unity.VisualScripting.Antlr3.Runtime;
 --assembly-defines=Unity.Burst.Unsafe;
 --assembly-defines=System.Runtime;
@@ -95,6 +97,8 @@ Library: /Users/victorsomto/Car/Zombie-Car/Temp/BurstOutput/tempburstlibs/armeab
 --assembly-defines=Unity.VisualScripting.State;
 --assembly-defines=Cinemachine;
 --assembly-defines=Unity.Notifications.Android;
+--assembly-defines=DelaunayER;
+--assembly-defines=EasyRoads3Dv3;
 --assembly-defines=Unity.VisualScripting.Antlr3.Runtime;
 --assembly-defines=Unity.Burst.Unsafe;
 --assembly-defines=System.Runtime;
