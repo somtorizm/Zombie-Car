@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -45,7 +44,8 @@ public class CubeSpawner : MonoBehaviour
 
         GameObject selectedCube = useRandomGameObject ? cubes[Random.Range(0, cubes.Count)] : cubes[0];
 
-        pooler.SpawnFromPool("Cube", position, Quaternion.identity);
+       pooler.SpawnFromPool("Cube", position, Quaternion.identity);
+        
         timer = 0f;
     }
 }
