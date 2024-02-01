@@ -6,7 +6,6 @@ public class MoveCube : MonoBehaviour
 {
     public float deadZone = 0f;
     private GameManagerScript gameManager;
-    public bool isOppositeLaneCar = false;
 
     private float speed;
 
@@ -27,13 +26,5 @@ public class MoveCube : MonoBehaviour
 
         }
         //destroyObject();
-    }
-
-    void destroyObject()
-    {
-        if(transform.position.z <= deadZone)
-        {
-            Destroy(gameObject);
-        }
     }
 }
