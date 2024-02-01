@@ -6,7 +6,6 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField]
     public float carSpeed = 50f;
 
-    [SerializeField]
     public float totalDistanceInMiles = 10f;
     private float remainingDistance;
 
