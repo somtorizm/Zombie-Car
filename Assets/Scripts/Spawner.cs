@@ -45,7 +45,12 @@ public class CubeSpawner : MonoBehaviour
 
         GameObject selectedCube = useRandomGameObject ? cubes[Random.Range(0, cubes.Count)] : cubes[0];
 
-        pooler.SpawnFromPool("Cube", position, Quaternion.identity);
+        GameObject obj = pooler.SpawnFromPool("Cube", position, Quaternion.identity);
+        if(obj.transform.position.z < 0f)
+        {
+            Destroy(obj);
+        }
+              
         timer = 0f;
     }
 }
