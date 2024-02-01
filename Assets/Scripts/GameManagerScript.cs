@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 using System.Collections;
 
@@ -22,6 +23,9 @@ public class GameManagerScript : MonoBehaviour
 
     [SerializeField]
     private GameObject zombieSpawner;
+
+    [SerializeField]
+    private GameObject gameOverPanel;
 
     private float timeScaleTarget = 0f;
     private float timeScaleSmoothness = 80f;
@@ -66,6 +70,7 @@ public class GameManagerScript : MonoBehaviour
         if (isPaused)
         {
             StartCoroutine(SmoothPause());
+            gameOverPanel.SetActive(true);
         }
         else
         {
@@ -99,6 +104,7 @@ public class GameManagerScript : MonoBehaviour
 
     void ResumeGame()
     {
+        gameOverPanel.SetActive(false);
         Time.timeScale = 1f; // Set time scale back to 1 to resume the gam
     }
 
@@ -109,6 +115,12 @@ public class GameManagerScript : MonoBehaviour
             zombieIsDisable = true;
             zombieSpawner.SetActive(false);
         }
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        ResumeGame();
     }
 
 }
