@@ -1043,9 +1043,8 @@ MonoBehaviour:
   zombieRig: {fileID: 5688209699996236163}
   target: {fileID: 152326766526494630, guid: b2f85d173a05c481c8ca3dced5251967, type: 3}
   animator: {fileID: 1394823879670200643}
-  hitspeed: 500
+  hitspeed: 200
   zombieSpeed: 0.1
-  effectTimeLaspe: 1000
 --- !u!114 &5228190147171870471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1059,7 +1058,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deadZone: 0
-  isOppositeLaneCar: 0
 --- !u!65 &8374640481425253839
 BoxCollider:
   m_ObjectHideFlags: 0
