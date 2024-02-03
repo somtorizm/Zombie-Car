@@ -14,7 +14,7 @@ public class CubeSpawner : MonoBehaviour
     [SerializeField] private float rightPosition = -2f;
 
     private float forwardPosition = 5f;
-    private float backwardPosition = -8f;
+    private float backwardPosition = -5f;
 
     public bool useRandomPosition = true;
     public bool useRandomGameObject = false;

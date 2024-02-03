@@ -109,10 +109,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2c076a124815242d9a9a128b61dfec86,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5228190147171870471}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2c076a124815242d9a9a128b61dfec86,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 8374640481425253839}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2c076a124815242d9a9a128b61dfec86,
         type: 3}
@@ -1045,19 +1041,6 @@ MonoBehaviour:
   animator: {fileID: 1394823879670200643}
   hitspeed: 200
   zombieSpeed: 0.1
---- !u!114 &5228190147171870471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5688209699996236163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a32074061866a4297aee8465fc664eba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deadZone: 0
 --- !u!65 &8374640481425253839
 BoxCollider:
   m_ObjectHideFlags: 0

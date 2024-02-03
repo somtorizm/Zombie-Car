@@ -48,7 +48,7 @@ public class GameManagerScript : MonoBehaviour
         {
             remainingDistance -= speed * Time.deltaTime; // Update remaining distance
             distanceText.text = "Distance: " + remainingDistance.ToString("F1") + " miles";
-            DisableZombieSpawn();
+            //DisableZombieSpawn();
 
         }
         else

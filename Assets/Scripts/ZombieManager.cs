@@ -9,8 +9,6 @@ public class CollisionDetection : MonoBehaviour, IPooledObject
     public GameObject target;
     public Animator animator;
     private GameManagerScript gameManagerScript;
-    private MoveCube movement;
-
 
     private Collider[] colliders;
     private Rigidbody[] rigidbodies;
@@ -31,7 +29,6 @@ public class CollisionDetection : MonoBehaviour, IPooledObject
 
     void Start()
     {
-        movement = GetComponent<MoveCube>();
         GetRagdollBits();
         RagdollModeOff();
         gameManagerScript = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
@@ -40,7 +37,6 @@ public class CollisionDetection : MonoBehaviour, IPooledObject
     IEnumerator TriggerZombieEffectWithDelay()
     {
         yield return new WaitForSeconds(0.95f);
-        movement.enabled = true;
     }
 
 
@@ -71,13 +67,12 @@ public class CollisionDetection : MonoBehaviour, IPooledObject
 
         if (collision.gameObject.tag == "Car")
         {
-            movement.enabled = false;
             RagdollModeOn();
 
             ContactPoint contact = collision.contacts[0];
             Vector3 impactPoint = contact.point;
 
-            float forceMagnitude = Mathf.Lerp(1, 550f, 10f);
+            float forceMagnitude = Mathf.Lerp(1, 400f, 10f);
 
             Vector3 forceDirection = impactPoint - transform.position;
             forceDirection.Normalize();
@@ -156,6 +151,4 @@ public class CollisionDetection : MonoBehaviour, IPooledObject
             RagdollModeOff();
         }
     }
-
- 
 }
