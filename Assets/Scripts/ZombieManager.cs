@@ -54,8 +54,6 @@ public class CollisionDetection : MonoBehaviour, IPooledObject
 
     }
 
-
-
     private void OnCollisionEnter(Collision collision)
 
     {
